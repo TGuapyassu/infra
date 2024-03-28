@@ -9,6 +9,10 @@ export const Container = styled.div`
     gap: 10px;
 `
 
+export const Box = styled.div`
+    
+`
+
 export const Titulo = styled.h1`
     text-align: center;
     font-size: 25px;
