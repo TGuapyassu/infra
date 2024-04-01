@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Container } from "./styles";
 
-const Home = () => {
+const Main = () => {
     const rotas = [{
         label: 'Contratos',
         to: '/contratos'
@@ -28,4 +28,4 @@ const Home = () => {
     );
 }
 
-export default Home
+export default Main
