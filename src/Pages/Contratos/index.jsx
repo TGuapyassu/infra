@@ -154,7 +154,7 @@ const PDFDocument = ({ nome, rg, cpf, modelo, serie, patrimonio, date, month }) 
         </Page>
         <Page size="A4" style={styles.page}>
             <View style={styles.section}>
-                <Text style={styles.subtitulo}>CLÁUSULA SÉTIIMA - NOVAÇÃO</Text>
+                <Text style={styles.subtitulo}>CLÁUSULA SÉTIMA - NOVAÇÃO</Text>
                 <Text>
                     A tolerância por parte da <Text style={{ fontFamily: 'Helvetica-Bold' }}>COMODANTE</Text> ao descumprimento das obrigações contratuais pelo (a) <Text style={{ fontFamily: 'Helvetica-Bold' }}>COMODATÁRIO (A)</Text>, não importará renúncia
                     ou novação dos direitos e não afetará o subsequente exercício de tal direito.
@@ -207,13 +207,15 @@ const PDFDocument = ({ nome, rg, cpf, modelo, serie, patrimonio, date, month }) 
 );
 
 function formatarCPF(cpf) {
-    // Remove caracteres não numéricos
     cpf = cpf.replace(/\D/g, '');
-
-    // Adiciona os pontos e traço
     cpf = cpf.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})$/, '$1.$2.$3-$4');
-
     return cpf;
+}
+
+function formatarRG(rg) {
+    rg = rg.replace(/\D/g, '');
+    rg = rg.replace(/^(\d{2})(\d{3})(\d{3})(\d{1})$/, '$1.$2.$3-$4');
+    return rg;
 }
 
 
@@ -228,11 +230,16 @@ const Contratos = () => {
     const [serie, setSerie] = useState('')
     const [patrimonio, setPatrimonio] = useState('')
 
-    // Função para atualizar o CPF formatado no estado
     const handleCPFChange = (e) => {
         const cpfDigitado = e.target.value;
         const cpfFormatado = formatarCPF(cpfDigitado);
         setCpf(cpfFormatado);
+    };
+
+    const handleRGChange = (e) => {
+        const rgDigitado = e.target.value;
+        const rgFormatado = formatarRG(rgDigitado);
+        setRg(rgFormatado);
     };
 
     return (
@@ -246,11 +253,13 @@ const Contratos = () => {
                 placeholder='CPF'
                 value={cpf}
                 onChange={handleCPFChange}
+                maxLength={14}
             />
             <Input
                 placeholder='RG'
                 value={rg}
-                onChange={(e) => setRg(e.target.value)}
+                onChange={handleRGChange}
+                maxLength={12}
             />
             <Input
                 placeholder='MODELO NOTEBOOK'
