@@ -216,12 +216,6 @@ function formatarCPF(cpf) {
     return cpf;
 }
 
-function formatarRG(rg) {
-    rg = rg.replace(/\D/g, '');
-    rg = rg.replace(/^(\d{2})(\d{3})(\d{3})(\d{1})$/, '$1.$2.$3-$4');
-    return rg;
-}
-
 
 const ContratosCel = () => {
     const date = new Date();
@@ -242,11 +236,6 @@ const ContratosCel = () => {
         setCpf(cpfFormatado);
     };
 
-    const handleRGChange = (e) => {
-        const rgDigitado = e.target.value;
-        const rgFormatado = formatarRG(rgDigitado);
-        setRg(rgFormatado);
-    };
 
     return (
         <Container>
@@ -267,8 +256,7 @@ const ContratosCel = () => {
             <Input
                 placeholder='RG'
                 value={rg}
-                onChange={handleRGChange}
-                maxLength={12}
+                onChange={(e) => setRg(e.target.value)}
             />
             <Input
                 placeholder='MODELO CELULAR'

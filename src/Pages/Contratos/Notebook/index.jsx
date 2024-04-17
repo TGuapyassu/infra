@@ -215,12 +215,6 @@ function formatarCPF(cpf) {
     return cpf;
 }
 
-function formatarRG(rg) {
-    rg = rg.replace(/\D/g, '');
-    rg = rg.replace(/^(\d{2})(\d{3})(\d{3})(\d{1})$/, '$1.$2.$3-$4');
-    return rg;
-}
-
 
 const ContratosNote = () => {
     const date = new Date();
@@ -237,12 +231,6 @@ const ContratosNote = () => {
         const cpfDigitado = e.target.value;
         const cpfFormatado = formatarCPF(cpfDigitado);
         setCpf(cpfFormatado);
-    };
-
-    const handleRGChange = (e) => {
-        const rgDigitado = e.target.value;
-        const rgFormatado = formatarRG(rgDigitado);
-        setRg(rgFormatado);
     };
 
     return (
@@ -264,8 +252,7 @@ const ContratosNote = () => {
             <Input
                 placeholder='RG'
                 value={rg}
-                onChange={handleRGChange}
-                maxLength={12}
+                onChange={(e) => setRg(e.target.value)}
             />
             <Input
                 placeholder='MODELO'
