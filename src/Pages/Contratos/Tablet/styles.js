@@ -19,8 +19,15 @@ export const Input = styled.input`
 export const Button = styled.button`
     width: 100%;
     height: 100%;
-    background-color: gray;
+    background-color: rgba(251, 76, 0, 1);
     cursor: pointer;
+    color: white;
+    border-radius: 35px;
+
+    &:hover {
+        background: rgba(69, 30, 68, 1);
+        color: rgba(241, 230, 178, 1);
+    }
 `
 
 export const Button2 = styled(Link)`
@@ -28,14 +35,18 @@ export const Button2 = styled(Link)`
   align-items: center;
   justify-content: center;
 
-  background: transparent;
+  background-color: rgba(251, 76, 0, 1);
+  color: white;
   width: 100px;
   height: 50px;
   border: 3px solid gray;
-  transition: background 0.3s;
   margin: 20px;
+  border-radius: 35px;
+  font-size: 18px;
+  text-decoration: none;
 
   &:hover {
-    background: cian;
+      background: rgba(69, 30, 68, 1);
+      color: rgba(241, 230, 178, 1);
   }
 `;

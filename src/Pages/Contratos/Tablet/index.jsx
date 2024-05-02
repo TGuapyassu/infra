@@ -232,11 +232,25 @@ const ContratosTab = () => {
         setCpf(cpfFormatado);
     };
 
+    const cleanInput = () => {
+        setNome('')
+        setRg('')
+        setCpf('')
+        setModelo('')
+        setSerie('')
+        setPatrimonio('')
+    }
+
     return (
         <Container>
-            <Button2 to={`/`}>
-                <MdOutlineArrowBack size={42} />
-            </Button2>
+            <div style={{ display: 'flex' }}>
+                <Button2 to={`/`}>
+                    <MdOutlineArrowBack size={42} />
+                </Button2>
+                <Button2 onClick={cleanInput}>
+                    Limpar
+                </Button2>
+            </div>
             <Input
                 placeholder='NOME'
                 value={nome}
