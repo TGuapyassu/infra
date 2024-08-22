@@ -2,18 +2,15 @@ import { Button, Container } from './styles';
 
 export const Main = () => {
     const rotas = [{
-        label: 'Notebook',
-        to: '/notebook'
+        label: 'Leve',
+        to: './ContratosLeve'
     }, {
-        label: 'Celular',
-        to: '/celular'
-    }, {
-        label: 'Tablet',
-        to: '/tablet'
+        label: 'Agille',
+        to: './ContratosAgille'
     }]
     return (
         <Container>
-            <h1>CONTRATOS LEVE</h1>
+            <h1>EMPRESAS</h1>
             {rotas.map((rota, index) => (
                 <Button key={index} to={rota.to}>
                     {rota.label}
@@ -22,8 +19,5 @@ export const Main = () => {
         </Container>
     )
 }
-
-const ContratosLeve = () => Main
-
 
 export default Main
