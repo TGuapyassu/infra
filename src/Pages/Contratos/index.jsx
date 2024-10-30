@@ -10,6 +10,9 @@ export const Main = () => {
     }, {
         label: 'Tablet',
         to: '/tablet'
+    }, {
+        label: 'Headset',
+        to: '/headset'
     }]
     return (
         <Container>

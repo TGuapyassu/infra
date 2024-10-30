@@ -8,6 +8,7 @@ import ContratosCel from './Pages/Contratos/Celular';
 import ContratosCelAgille from './Pages/ContratosAgille/Celular';
 import ContratosTab from './Pages/Contratos/Tablet';
 import ContratosTabAgille from './Pages/ContratosAgille/Tablet';
+import ContratosHeadset from './Pages/Contratos/Headset'
 
 export default function AppRouter() {
     return (
@@ -22,6 +23,7 @@ export default function AppRouter() {
                 <Route index path='/CelularAgille' element={<ContratosCelAgille />} />
                 <Route index path='/Tablet' element={<ContratosTab />} />
                 <Route index path='/TabletAgille' element={<ContratosTabAgille />} />
+                <Route index path='/headset' element={<ContratosHeadset />} />
             </Routes>
         </Router>
     )
