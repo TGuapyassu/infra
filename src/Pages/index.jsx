@@ -1,20 +1,20 @@
-import { Button, Container } from './styles';
+import { ButtonPrincipal, Container } from './styles';
 
 export const Main = () => {
     const rotas = [{
-        label: 'Leve',
-        to: './ContratosLeve'
+        label: 'Leve Saúde',
+        to: '/contratosLeve'
     }, {
-        label: 'Agille',
-        to: './ContratosAgille'
+        label: 'Agille Corretora',
+        to: '/contratosAgille'
     }]
     return (
         <Container>
-            <h1>EMPRESAS</h1>
+            <h1>Selecione a empresa</h1>
             {rotas.map((rota, index) => (
-                <Button key={index} to={rota.to}>
+                <ButtonPrincipal key={index} to={rota.to}>
                     {rota.label}
-                </Button>
+                </ButtonPrincipal>
             ))}
         </Container>
     )

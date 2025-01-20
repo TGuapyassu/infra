@@ -1,4 +1,5 @@
-import { Button, Container } from './styles';
+import { ButtonPrincipal, Container, Button } from '../styles';
+import { MdOutlineArrowBack } from 'react-icons/md';
 
 export const Main = () => {
     const rotas = [{
@@ -16,17 +17,19 @@ export const Main = () => {
     }]
     return (
         <Container>
-            <h1>CONTRATOS LEVE</h1>
-            {rotas.map((rota, index) => (
-                <Button key={index} to={rota.to}>
-                    {rota.label}
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <Button to={`/`}>
+                    <MdOutlineArrowBack size={42} />
                 </Button>
+                <h1>Contratos Leve Saúde</h1>
+            </div>
+            {rotas.map((rota, index) => (
+                <ButtonPrincipal key={index} to={rota.to}>
+                    {rota.label}
+                </ButtonPrincipal>
             ))}
         </Container>
     )
 }
-
-const ContratosLeve = () => Main
-
 
 export default Main

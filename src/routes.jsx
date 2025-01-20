@@ -15,14 +15,14 @@ export default function AppRouter() {
         <Router>
             <Routes>
                 <Route index path='/' element={<Main />} />
-                <Route index path='/ContratosLeve' element={<ContratosLeve />} />
-                <Route index path='/ContratosAgille' element={<ContratosAgille />} />
-                <Route index path='/Notebook' element={<ContratosNote />} />
-                <Route index path='/NotebookAgille' element={<ContratosNoteAgille />} />
-                <Route index path='/Celular' element={<ContratosCel />} />
-                <Route index path='/CelularAgille' element={<ContratosCelAgille />} />
-                <Route index path='/Tablet' element={<ContratosTab />} />
-                <Route index path='/TabletAgille' element={<ContratosTabAgille />} />
+                <Route index path='/contratosLeve' element={<ContratosLeve />} />
+                <Route index path='/contratosAgille' element={<ContratosAgille />} />
+                <Route index path='/notebook' element={<ContratosNote />} />
+                <Route index path='/notebookAgille' element={<ContratosNoteAgille />} />
+                <Route index path='/celular' element={<ContratosCel />} />
+                <Route index path='/celularAgille' element={<ContratosCelAgille />} />
+                <Route index path='/tablet' element={<ContratosTab />} />
+                <Route index path='/tabletAgille' element={<ContratosTabAgille />} />
                 <Route index path='/headset' element={<ContratosHeadset />} />
             </Routes>
         </Router>
